@@ -1,6 +1,9 @@
 
+
+
 import { checkAndSendNotifications } from "./scripts/sendSMS.js";
 import { sendScheduledWhatsApp } from "./scripts/sendWhatsapp.js";
+import {checkAndSendEmails} from "./scripts/sendEmail.js";
 
 console.log("🚀 Notification system started...");
 
@@ -8,6 +11,7 @@ const runSchedulers = () => {
   console.log("🔄 Running scheduled notifications...");
   checkAndSendNotifications();
   sendScheduledWhatsApp();
+  checkAndSendEmails();
 };
 
 // Run every 15 minutes
