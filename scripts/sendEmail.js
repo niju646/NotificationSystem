@@ -1,12 +1,9 @@
 
 
 
-
-
-
 import dotenv from "dotenv";
 import pkg from "pg";
-import { sendEmail } from "../utils/emailSender.js"; // Import from utils
+import { sendEmail } from "../utils/emailSender.js"; 
 
 dotenv.config();
 const { Pool } = pkg;

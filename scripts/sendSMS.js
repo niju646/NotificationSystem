@@ -1,7 +1,5 @@
 
 
-
-
 import twilio from "twilio";
 import dotenv from "dotenv";
 import pkg from "pg";
@@ -51,11 +49,12 @@ export const checkAndSendNotifications = async () => {
 const sendSMS = async (phoneNumbers, message) => {
   try {
     for (const phone of phoneNumbers) {
-      await client.messages.create({
+      let res = await client.messages.create({
         body: message,
         from: twilioPhoneNumber,
         to: phone,
       });
+      console.log(res)
       console.log(`✅ SMS sent to ${phone}`);
     }
   } catch (error) {

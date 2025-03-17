@@ -1,7 +1,5 @@
 
 
-
-
 import { apiInstance } from '../config/index.js';
 
 export const sendEmail = async (recipients, template, htmlContent) => {
@@ -10,7 +8,7 @@ export const sendEmail = async (recipients, template, htmlContent) => {
       sender: { name: "LMS", email: process.env.SENDINBLUE_EMAIL },
       to: recipients.map(email => ({ email, name: email })),
       subject: "📢 LMS Notification",
-      htmlContent: htmlContent, // Use the formatted HTML
+      htmlContent: htmlContent, 
     };
 
     const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
