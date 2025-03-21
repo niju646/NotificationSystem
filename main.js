@@ -1,7 +1,6 @@
 
 
 
-
 // main.js
 import { checkAndSendNotifications } from "./scripts/sendSMS.js";
 import { sendScheduledWhatsApp } from "./scripts/sendWhatsapp.js";
@@ -78,26 +77,8 @@ const runSchedulers = () => {
   console.log("🔄 Checking database for scheduled notifications...");
   scheduleNotifications();
 };
-setInterval(runSchedulers, 2 * 60 * 1000);
+setInterval(runSchedulers, 15 * 60 * 1000);
 runSchedulers();
 
 
 
-// import { checkAndSendNotifications } from "./scripts/sendSMS.js";
-// import { sendScheduledWhatsApp } from "./scripts/sendWhatsapp.js";
-// import {checkAndSendEmails} from "./scripts/sendEmail.js";
-
-// console.log("🚀 Notification system started...");
-
-// const runSchedulers = () => {
-//   console.log("🔄 Running scheduled notifications...");
-//   checkAndSendNotifications();
-//   sendScheduledWhatsApp();
-//   checkAndSendEmails();
-// };
-
-// // Run every 15 minutes
-// setInterval(runSchedulers, 2 * 60 * 1000);
-
-// // Run immediately on startup
-// runSchedulers();
